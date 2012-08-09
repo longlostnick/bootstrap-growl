@@ -8,7 +8,11 @@
 
     var $alert = $('<div>');
 
-    $alert.attr('class', 'bootstrap-growl alert alert-' + options.type);
+    $alert.attr('class', 'bootstrap-growl alert');
+
+    if (options.type) {
+        $alert.addClass('alert-' + options.type);
+    }
 
     if (options.allow_dismiss) {
       $alert.append('<a class="close" data-dismiss="alert" href="#">&times;</a>');
@@ -61,7 +65,7 @@
   };
 
   $.bootstrapGrowl.default_options = {
-    type: 'info',
+    type: null,
     top_offset: 20,
     align: 'right', // (left, right, or center)
     width: 250,
