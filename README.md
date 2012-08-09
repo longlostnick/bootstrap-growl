@@ -7,6 +7,7 @@ Pretty simple jQuery plugin that turns standard Bootstrap alerts into hovering "
 
 * Uses standard [Twitter Bootstrap alerts](http://twitter.github.com/bootstrap/components.html#alerts) which provides 'info', 'error', and 'success' styles.
 * Multiple growls called consecutively are stacked up one after another in a list.
+* Automatically fades growls away after a default of 4 seconds.
 
 ###Dependencies
 
