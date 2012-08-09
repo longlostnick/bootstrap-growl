@@ -33,7 +33,7 @@
       'top': top_offset + 'px',
       'border': '1px solid ' + $alert.css('color'),
       'margin': 0,
-      'z-index': '999',
+      'z-index': '9999',
       'display': 'none'
     });
 
