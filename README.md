@@ -28,7 +28,7 @@ $.bootstrapGrowl("My message");
 
 ###Available Options
 
-By default, growls use the Bootstrap 'info' style, are 250px wide, right aligned, and are positioned 20px from the top right of the page.
+By default, growls use the standard 'alert' Bootstrap style, are 250px wide, right aligned, and are positioned 20px from the top right of the page.
 
 ```javascript
 $.bootstrapGrowl("another message, yay!", {
