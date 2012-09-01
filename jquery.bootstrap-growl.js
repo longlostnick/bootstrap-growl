@@ -21,7 +21,7 @@
     $alert.append(message);
 
     var top_offset = options.top_offset;
-    var current = $('.bootstrap-growl', 'body');
+    var current = $('.bootstrap-growl', options.ele);
 
     // calculate any 'stack-up'
     $.each(current, function() {
@@ -42,7 +42,7 @@
     }
 
     // have to append before we can use outerWidth()
-    $('body').append($alert);
+    $(options.ele).append($alert);
 
     switch(options.align) {
       case 'center':
@@ -65,6 +65,7 @@
   };
 
   $.bootstrapGrowl.default_options = {
+    ele: 'body',
     type: null,
     top_offset: 20,
     align: 'right', // (left, right, or center)
