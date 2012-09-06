@@ -58,9 +58,13 @@
         $alert.css('right', '20px');
     }
 
-    $alert.fadeIn().delay(options.delay).fadeOut('slow', function() {
-      $(this).remove();
-    });
+    $alert.fadeIn();
+    // Only remove after delay if delay is more than 0
+    if(options.delay >= 0){
+      $alert.delay(options.delay).fadeOut('slow', function() {
+        $(this).remove();
+      });
+    }
 
   };
 
