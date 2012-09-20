@@ -15,7 +15,7 @@ I have a basic demo set up at jsfiddle for the time being which you can view her
 ##Dependencies
 
 1. Latest version of jQuery. (tested on 1.7.2)
-2. [Twitter Bootstrap](http://twitter.github.com/bootstrap/index.html). (tested on 2.0.3)
+2. [Twitter Bootstrap](http://twitter.github.com/bootstrap/index.html). (tested on 2.0.3 & 2.1.1)
 
 ##Usage
 
