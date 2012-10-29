@@ -18,6 +18,16 @@
       $alert.append('<a class="close" data-dismiss="alert" href="#">&times;</a>');
     }
 
+    if(options.type == null) {
+      message = '<span class="label label-warning"><i class="icon-warning-sign icon-white"></i> Warning</span> ' + message;
+    } else if (options.type == 'info') {
+      message = '<span class="label label-info"><i class="icon-info-sign icon-white"></i> Info</span> ' + message;
+    } else if (options.type == 'error') {
+      message = '<span class="label label-important"><i class="icon-exclamation-sign icon-white"></i> Error</span> ' + message;
+    } else if (options.type == 'success') {
+      message = '<span class="label label-success"><i class="icon-ok-sign icon-white"></i> Success</span> ' + message;
+    } 
+
     $alert.append(message);
 
     var top_offset = options.top_offset;

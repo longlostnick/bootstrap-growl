@@ -6,6 +6,8 @@ Pretty simple jQuery plugin that turns standard Bootstrap alerts into hovering "
 
 I have a basic demo set up at jsfiddle for the time being which you can view here: http://jsfiddle.net/tkB69/2/
 
+There is also a downloadable demo in the 'demo' folder. Alternatively, the demo is hosted here: http://robhilgefort.com/rjh/bootstrap-growl/demo/
+
 ##Features
 
 * Uses standard [Twitter Bootstrap alerts](http://twitter.github.com/bootstrap/components.html#alerts) which provides 'info', 'error', and 'success' styles.
