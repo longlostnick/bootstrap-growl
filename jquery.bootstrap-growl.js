@@ -20,22 +20,27 @@
 
     $alert.append(message);
 
-    var top_offset = options.top_offset;
+    // Prevent BC breaks
+    if (options.top_offset) {
+        options.offset = {from: 'top', amount: options.top_offset};
+    }
     var current = $('.bootstrap-growl', options.ele);
 
     // calculate any 'stack-up'
+    offsetAmount = options.offset.amount;
     $.each(current, function() {
-      top_offset = top_offset + $(this).outerHeight() + options.stackup_spacing;
+        offsetAmount = offsetAmount + $(this).outerHeight() + options.stackup_spacing;
     });
 
-    $alert.css({
+    css = {
       'position': 'absolute',
-      'top': top_offset + 'px',
       'border': '1px solid ' + $alert.css('color'),
       'margin': 0,
       'z-index': '9999',
       'display': 'none'
-    });
+    };
+    css[options.offset.from] = offsetAmount + 'px';
+    $alert.css(css);
 
     if (options.width !== 'auto') {
       $alert.css('width', options.width + 'px');
@@ -71,7 +76,7 @@
   $.bootstrapGrowl.default_options = {
     ele: 'body',
     type: null,
-    top_offset: 20,
+    offset: {from: 'top', amount: 20},
     align: 'right', // (left, right, or center)
     width: 250,
     delay: 4000,

@@ -14,7 +14,7 @@ I have a basic demo set up at jsfiddle for the time being which you can view her
 
 ##Dependencies
 
-1. Latest version of jQuery. (tested on 1.7.2)
+1. Latest version of jQuery. (tested on 1.8.3)
 2. [Twitter Bootstrap](http://twitter.github.com/bootstrap/index.html). (tested on 2.0.3 & 2.1.1)
 
 ##Usage
@@ -33,7 +33,7 @@ By default, growls use the standard 'alert' Bootstrap style, are 250px wide, rig
 $.bootstrapGrowl("another message, yay!", {
   ele: 'body' // which element to append to
   type: 'info', // (null, 'info', 'error', 'success')
-  top_offset: 20,
+  offset: {from: 'top', amount: 20}, // 'top', or 'bottom'
   align: 'right', // ('left', 'right', or 'center')
   width: 250, // (integer, or 'auto')
   delay: 4000,
@@ -41,3 +41,9 @@ $.bootstrapGrowl("another message, yay!", {
   stackup_spacing: 10 // spacing between consecutive stacecked growls.
 });
 ```
+
+Note: Previous ```top_offset``` is not broken by this latest change.
+
+## Additional contributors
+
+* Lloyd Watkin https://github.com/lloydwatkin
