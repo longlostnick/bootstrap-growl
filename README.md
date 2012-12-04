@@ -46,4 +46,5 @@ Note: Previous ```top_offset``` is not broken by this latest change.
 
 ## Additional contributors
 
+* TruongSinh Tran-Nguyen https://github.com/tran-nguyen
 * Lloyd Watkin https://github.com/lloydwatkin
