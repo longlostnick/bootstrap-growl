@@ -34,7 +34,6 @@
 
     css = {
       'position': 'absolute',
-      'border': '1px solid ' + $alert.css('color'),
       'margin': 0,
       'z-index': '9999',
       'display': 'none'
