@@ -24,7 +24,7 @@
     if (options.top_offset) {
         options.offset = {from: 'top', amount: options.top_offset};
     }
-    var current = $('.bootstrap-growl');
+    var current = $('.bootstrap-growl', options.ele);
 
     // calculate any 'stack-up'
     var offsetAmount = options.offset.amount;
