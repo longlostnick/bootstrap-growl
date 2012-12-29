@@ -1,7 +1,7 @@
 /* https://github.com/ifightcrime/bootstrap-growl */
 
-(function($) {
 
+(function($) {
   $.bootstrapGrowl = function(message, options) {
 
     var options = $.extend({}, $.bootstrapGrowl.default_options, options);
@@ -27,9 +27,9 @@
     var current = $('.bootstrap-growl', options.ele);
 
     // calculate any 'stack-up'
-    offsetAmount = options.offset.amount;
+    var offsetAmount = options.offset.amount;
     $.each(current, function() {
-        offsetAmount = offsetAmount + $(this).outerHeight() + options.stackup_spacing;
+      offsetAmount = Math.max(offsetAmount, parseInt($(this).css(options.offset.from)) + $(this).outerHeight() + options.stackup_spacing);
     });
 
     css = {
