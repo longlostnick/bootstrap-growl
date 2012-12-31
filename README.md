@@ -44,7 +44,8 @@ $.bootstrapGrowl("another message, yay!", {
 
 Note: Previous ```top_offset``` is not broken by this latest change.
 
-## Additional contributors
+##Additional Contributors
 
-* TruongSinh Tran-Nguyen https://github.com/tran-nguyen
+* Jose Martinez https://github.com/callado4
 * Lloyd Watkin https://github.com/lloydwatkin
+* TruongSinh Tran-Nguyen https://github.com/tran-nguyen
