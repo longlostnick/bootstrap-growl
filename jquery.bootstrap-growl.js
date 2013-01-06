@@ -14,6 +14,10 @@
         $alert.addClass('alert-' + options.type);
     }
 
+    if(options.close_action && typeof(options.close_action) == 'function') {
+        $alert.bind('closed', options.close_action);
+    }
+
     if (options.allow_dismiss) {
       $alert.append('<a class="close" data-dismiss="alert" href="#">&times;</a>');
     }
@@ -67,6 +71,9 @@
     if(options.delay >= 0){
       $alert.delay(options.delay).fadeOut('slow', function() {
         $(this).remove();
+        if(options.close_action && typeof(options.close_action) == 'function') {
+          options.close_action();
+        }
       });
     }
 
@@ -75,6 +82,7 @@
   $.bootstrapGrowl.default_options = {
     ele: 'body',
     type: null,
+    close_action: null,
     offset: {from: 'top', amount: 20},
     align: 'right', // (left, right, or center)
     width: 250,
