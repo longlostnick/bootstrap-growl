@@ -14,6 +14,6 @@ task :minify do
     end
     return false
   end
-  puts "Minifying touch-sroll.js with UglifyJS..."
+  puts "Minifying jquery.bootstrap-growl.js with UglifyJS..."
   File.open("jquery.bootstrap-growl.min.js", "w"){|f| f.puts Uglifier.new.compile(File.read("jquery.bootstrap-growl.js"))}
 end

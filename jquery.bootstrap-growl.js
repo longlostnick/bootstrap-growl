@@ -24,16 +24,15 @@
     if (options.top_offset) {
         options.offset = {from: 'top', amount: options.top_offset};
     }
-    var current = $('.bootstrap-growl', options.ele);
 
     // calculate any 'stack-up'
     var offsetAmount = options.offset.amount;
-    $.each(current, function() {
+    $('.bootstrap-growl').each(function() {
       offsetAmount = Math.max(offsetAmount, parseInt($(this).css(options.offset.from)) + $(this).outerHeight() + options.stackup_spacing);
     });
 
     css = {
-      'position': 'absolute',
+      'position': (options.ele == 'body' ? 'fixed' : 'absolute'),
       'margin': 0,
       'z-index': '9999',
       'display': 'none'
