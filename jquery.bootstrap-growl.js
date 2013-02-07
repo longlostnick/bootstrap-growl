@@ -1,6 +1,5 @@
 /* https://github.com/ifightcrime/bootstrap-growl */
 
-
 (function($) {
   $.bootstrapGrowl = function(message, options) {
 
