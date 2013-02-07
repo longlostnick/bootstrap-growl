@@ -63,8 +63,8 @@
 
     $alert.fadeIn();
     // Only remove after delay if delay is more than 0
-    if(options.delay >= 0){
-      $alert.delay(options.delay).fadeOut('slow', function() {
+    if(options.delay > 0){
+      $alert.delay(options.delay).fadeOut(function() {
         $(this).remove();
       });
     }
