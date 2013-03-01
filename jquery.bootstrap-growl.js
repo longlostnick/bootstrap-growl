@@ -68,6 +68,29 @@
       });
     }
 
+    var hoverTime;
+    return $alert.bind({
+      mouseenter: function(e){
+        var date = new Date();
+        hoverTime = date.getTime();
+        $alert.clearQueue();
+      },
+      mouseleave: function(e){
+        var date = new Date();
+        hoverTime = date.getTime() - hoverTime;
+        if(options.delay > 0){
+          if(hoverTime >= options.delay){
+            $alert.fadeOut(function() {
+              $(this).remove();
+            });
+          }else{
+            $alert.delay(options.delay - hoverTime).fadeOut(function() {
+              $(this).remove();
+            });
+          }
+        }
+      }
+    });
   };
 
   $.bootstrapGrowl.default_options = {
