@@ -1,6 +1,26 @@
 # special thanks to https://github.com/tuupola/jquery_lazyload for this cool Rakefile
 task :default => [:minify]
 
+desc "coffee2js"
+task :coffee2js do
+  begin
+    require 'coffee-script'
+  rescue LoadError => e
+    if verbose
+      puts "\nYou'll need the 'coffee-script' gem for translate the coffeescript file to js. Just run:\n\n"
+      puts "  $ gem install coffee-script"
+      puts "\nand you should be all set.\n\n"
+      exit
+    end
+    return false
+  end
+  puts "Translating jquery.bootstrap-growl.coffee to jquery.bootstrap-growl.js..."
+  File.open("jquery.bootstrap-growl.js", "w") do |f|
+    f.puts CoffeeScript.compile(File.read("jquery.bootstrap-growl.coffee"))
+  end
+end
+
+
 desc "Minify"
 task :minify do
   begin
@@ -15,5 +35,7 @@ task :minify do
     return false
   end
   puts "Minifying jquery.bootstrap-growl.js with UglifyJS..."
-  File.open("jquery.bootstrap-growl.min.js", "w"){|f| f.puts Uglifier.new.compile(File.read("jquery.bootstrap-growl.js"))}
+  File.open("jquery.bootstrap-growl.min.js", "w") do |f|
+    f.puts Uglifier.new.compile(File.read("jquery.bootstrap-growl.js"))
+  end
 end
