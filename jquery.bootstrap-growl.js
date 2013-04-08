@@ -10,18 +10,23 @@
     $alert.attr('class', 'bootstrap-growl alert');
 
     if (options.type) {
-        $alert.addClass('alert-' + options.type);
+      $alert.addClass('alert-' + options.type);
     }
 
     if (options.allow_dismiss) {
       $alert.append('<a class="close" data-dismiss="alert" href="#">&times;</a>');
     }
+    if(options.icon){
+      message = '<span><i class="icon '+options.icon+'"></i> '+message+'</span>';
+      $alert.append(message);
+    } else {
+      $alert.append(message);
+    }
 
-    $alert.append(message);
 
     // Prevent BC breaks
     if (options.top_offset) {
-        options.offset = {from: 'top', amount: options.top_offset};
+      options.offset = {from: 'top', amount: options.top_offset};
     }
 
     // calculate any 'stack-up'
@@ -48,16 +53,16 @@
 
     switch(options.align) {
       case 'center':
-        $alert.css({
-          'left': '50%',
-          'margin-left': '-' + ($alert.outerWidth() / 2) + 'px'
-        });
-        break;
+      $alert.css({
+        'left': '50%',
+        'margin-left': '-' + ($alert.outerWidth() / 2) + 'px'
+      });
+      break;
       case 'left':
-        $alert.css('left', '20px');
-        break;
+      $alert.css('left', '20px');
+      break;
       default:
-        $alert.css('right', '20px');
+      $alert.css('right', '20px');
     }
 
     $alert.fadeIn();
@@ -78,6 +83,7 @@
     width: 250,
     delay: 4000,
     allow_dismiss: true,
+    icon : '',
     stackup_spacing: 10
   };
 
