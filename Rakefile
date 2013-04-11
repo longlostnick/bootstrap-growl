@@ -3,6 +3,23 @@ task :default => [:minify]
 
 desc "coffee2js"
 task :coffee2js do
+  coffee2js
+end
+
+desc "Minify"
+task :minify do
+  minify
+end
+
+desc "Build"
+task :build do
+  coffee2js
+  minify
+end
+
+# method definitions
+
+def coffee2js
   begin
     require 'coffee-script'
   rescue LoadError => e
@@ -20,9 +37,7 @@ task :coffee2js do
   end
 end
 
-
-desc "Minify"
-task :minify do
+def minify
   begin
     require 'uglifier'
   rescue LoadError => e
@@ -39,3 +54,4 @@ task :minify do
     f.puts Uglifier.new.compile(File.read("jquery.bootstrap-growl.js"))
   end
 end
+
