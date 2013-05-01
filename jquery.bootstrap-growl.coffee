@@ -54,6 +54,8 @@ $.bootstrapGrowl = (message, options) ->
     $alert.delay(options.delay).fadeOut ->
       $(this).remove()
 
+  $alert
+
 $.bootstrapGrowl.default_options =
   ele: "body"
   type: null
