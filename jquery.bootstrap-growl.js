@@ -53,10 +53,11 @@
     }
     $alert.fadeIn();
     if (options.delay > 0) {
-      return $alert.delay(options.delay).fadeOut(function() {
+      $alert.delay(options.delay).fadeOut(function() {
         return $(this).remove();
       });
     }
+    return $alert;
   };
 
   $.bootstrapGrowl.default_options = {
