@@ -5,6 +5,9 @@ $ = jQuery
 $.bootstrapGrowl = (message, options) ->
   options = $.extend({}, $.bootstrapGrowl.default_options, options)
 
+  setTimeout = (t,f) ->
+      window.setTimeout f, t
+
   $alert = $("<div>")
   $alert.attr "class", "bootstrap-growl alert"
   $alert.addClass "alert-" + options.type if options.type
@@ -51,8 +54,24 @@ $.bootstrapGrowl = (message, options) ->
 
   # Only remove after delay if delay is more than 0
   if options.delay > 0
-    $alert.delay(options.delay).fadeOut ->
-      $(this).alert "close"
+
+    $(options.ele).on "mouseenter", ".bootstrap-growl.alert", ->
+      to = $(this).data 'bootstrap-growl-to'
+      if to
+        $(this).data 'bootstrap-growl-to', false
+        clearTimeout to if to
+
+    $(options.ele).on "mouseleave", ".bootstrap-growl.alert", ->
+      to = $(this).data 'bootstrap-growl-to'
+      if to?
+        closeAlert.call this unless to
+
+    closeAlert = ->
+      $(this).data 'bootstrap-growl-to', setTimeout options.delay, =>
+          $(this).fadeOut =>
+            $(this).alert "close"
+
+    closeAlert.call($alert)
 
   $alert
 
