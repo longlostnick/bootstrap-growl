@@ -54,7 +54,7 @@
     $alert.fadeIn();
     if (options.delay > 0) {
       $alert.delay(options.delay).fadeOut(function() {
-        return $(this).remove();
+        return $(this).alert("close");
       });
     }
     return $alert;
