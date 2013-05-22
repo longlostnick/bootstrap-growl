@@ -11,6 +11,7 @@ I have a basic demo set up at jsfiddle for the time being which you can view her
 * Uses standard [Twitter Bootstrap alerts](http://twitter.github.com/bootstrap/components.html#alerts) which provides 'info', 'error', and 'success' styles.
 * Multiple growls called consecutively are stacked up one after another in a list.
 * Automatically fades growls away after a default of 4 seconds.
+* Opens an url when the notification is clicked (optional)
 
 ##Dependencies
 
@@ -38,6 +39,7 @@ $.bootstrapGrowl("another message, yay!", {
   width: 250, // (integer, or 'auto')
   delay: 4000,
   allow_dismiss: true,
+  url: 'http://example.com',
   stackup_spacing: 10 // spacing between consecutively stacked growls.
 });
 ```
