@@ -47,6 +47,12 @@ $.bootstrapGrowl = (message, options) ->
     else
       $alert.css "right", "20px"
 
+  if options.url
+    $alert.on "click", (e) ->
+      return if $(e.target).is "a"
+      window.location = options.url
+      return
+
   $alert.fadeIn()
 
   # Only remove after delay if delay is more than 0

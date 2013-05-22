@@ -51,6 +51,14 @@
       default:
         $alert.css("right", "20px");
     }
+    if (options.url) {
+      $alert.on("click", function(e) {
+        if ($(e.target).is("a")) {
+          return;
+        }
+        window.location = options.url;
+      });
+    }
     $alert.fadeIn();
     if (options.delay > 0) {
       $alert.delay(options.delay).fadeOut(function() {
