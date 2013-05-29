@@ -4,9 +4,12 @@
   $ = jQuery;
 
   $.bootstrapGrowl = function(message, options) {
-    var $alert, css, offsetAmount;
+    var $alert, closeAlert, css, offsetAmount, setTimeout;
 
     options = $.extend({}, $.bootstrapGrowl.default_options, options);
+    setTimeout = function(t, f) {
+      return window.setTimeout(f, t);
+    };
     $alert = $("<div>");
     $alert.attr("class", "bootstrap-growl alert");
     if (options.type) {
@@ -53,9 +56,37 @@
     }
     $alert.fadeIn();
     if (options.delay > 0) {
-      $alert.delay(options.delay).fadeOut(function() {
-        return $(this).alert("close");
+      $(options.ele).on("mouseenter", ".bootstrap-growl.alert", function() {
+        var to;
+
+        to = $(this).data('bootstrap-growl-to');
+        if (to) {
+          $(this).data('bootstrap-growl-to', false);
+          if (to) {
+            return clearTimeout(to);
+          }
+        }
       });
+      $(options.ele).on("mouseleave", ".bootstrap-growl.alert", function() {
+        var to;
+
+        to = $(this).data('bootstrap-growl-to');
+        if (to != null) {
+          if (!to) {
+            return closeAlert.call(this);
+          }
+        }
+      });
+      closeAlert = function() {
+        var _this = this;
+
+        return $(this).data('bootstrap-growl-to', setTimeout(options.delay, function() {
+          return $(_this).fadeOut(function() {
+            return $(_this).alert("close");
+          });
+        }));
+      };
+      closeAlert.call($alert);
     }
     return $alert;
   };
