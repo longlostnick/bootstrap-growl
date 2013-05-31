@@ -38,7 +38,8 @@ $.bootstrapGrowl("another message, yay!", {
   width: 250, // (integer, or 'auto')
   delay: 4000,
   allow_dismiss: true,
-  stackup_spacing: 10 // spacing between consecutively stacked growls.
+  stackup_spacing: 10, // spacing between consecutively stacked growls.
+  click: null // callback function when notification is clicked (optional)
 });
 ```
 

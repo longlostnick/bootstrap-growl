@@ -47,6 +47,13 @@ $.bootstrapGrowl = (message, options) ->
     else
       $alert.css "right", "20px"
 
+  # Call callback function when click option is set
+  if options.click
+    $alert.on "click", ->
+      options.click.apply this, arguments
+      $alert.dequeue().fadeOut ->
+        $(this).alert "close"
+
   $alert.fadeIn()
 
   # Only remove after delay if delay is more than 0
@@ -67,4 +74,5 @@ $.bootstrapGrowl.default_options =
   delay: 4000
   allow_dismiss: true
   stackup_spacing: 10
+  click: null
 
