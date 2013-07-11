@@ -4,7 +4,7 @@ Pretty simple jQuery plugin that turns standard Bootstrap alerts into hovering "
 
 ##Demo
 
-I have a basic demo set up at jsfiddle for the time being which you can view here: http://jsfiddle.net/c0bra/Us6WX/1/
+I have a basic demo set up at jsfiddle for the time being which you can view here: http://jsfiddle.net/ifightcrime/Us6WX/88/
 
 ##Features
 
