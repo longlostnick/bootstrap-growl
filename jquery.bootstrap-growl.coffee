@@ -58,7 +58,7 @@ $.bootstrapGrowl = (message, options) ->
 
 $.bootstrapGrowl.default_options =
   ele: "body"
-  type: null
+  type: "info"
   offset:
     from: "top"
     amount: 20
