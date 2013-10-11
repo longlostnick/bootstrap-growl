@@ -15,6 +15,11 @@
     if (options.allow_dismiss) {
       $alert.append("<a class=\"close\" data-dismiss=\"alert\" href=\"#\">&times;</a>");
     }
+
+    if (options.title) {
+      $alert.append("<h4>" + options.title + "</h4>") ;
+    }
+
     $alert.append(message);
     if (options.top_offset) {
       options.offset = {
