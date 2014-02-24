@@ -51,6 +51,14 @@
       default:
         $alert.css("right", "20px");
     }
+    if (options.click) {
+      $alert.on("click", function() {
+        options.click.apply(this, arguments);
+        return $alert.dequeue().fadeOut(function() {
+          return $(this).alert("close");
+        });
+      });
+    }
     $alert.fadeIn();
     if (options.delay > 0) {
       $alert.delay(options.delay).fadeOut(function() {
@@ -71,7 +79,8 @@
     width: 250,
     delay: 4000,
     allow_dismiss: true,
-    stackup_spacing: 10
+    stackup_spacing: 10,
+    click: null
   };
 
 }).call(this);

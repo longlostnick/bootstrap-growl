@@ -35,6 +35,17 @@
                         stackup_spacing: 30
                     });
                 }, 3000);
+
+                setTimeout(function() {
+                    $.bootstrapGrowl("Click me to open another alert!", {
+                        type: 'info',
+                        align: 'center',
+                        allow_dismiss: false,
+                        click: function() {
+                            $.bootstrapGrowl('This is a callback test');
+                        }
+                    });
+                }, 4000);
             });
 
         </script>
