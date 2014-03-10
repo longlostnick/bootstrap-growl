@@ -37,7 +37,7 @@ $.bootstrapGrowl("another message, yay!", {
   align: 'right', // ('left', 'right', or 'center')
   width: 250, // (integer, or 'auto')
   delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
-  allow_dismiss: true, // If true then won't display twice the same message. If false then won't filter messages.
+  allow_dismiss: true, // If true will display a cross to close the popup.
   stackup_spacing: 10 // spacing between consecutively stacked growls.
 });
 ```
