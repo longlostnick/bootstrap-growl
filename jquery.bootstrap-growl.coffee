@@ -54,6 +54,18 @@ $.bootstrapGrowl = (message, options) ->
     $alert.delay(options.delay).fadeOut ->
       $(this).alert "close"
 
+  if options.autoshrink
+    $(options.ele).on "click", ".bootstrap-growl.alert>.close", (e) ->
+      $this = $(this).closest(".alert")
+      height = $this.outerHeight() + options.stackup_spacing
+      $this.nextAll().css options.offset.from, (i, val) ->
+        val = parseInt(val, 10)
+        (val - height) + "px"
+
+      $this.alert "close"
+      e.preventDefault()
+      e.stopPropagation()
+
   $alert
 
 $.bootstrapGrowl.default_options =
@@ -67,4 +79,5 @@ $.bootstrapGrowl.default_options =
   delay: 4000
   allow_dismiss: true
   stackup_spacing: 10
+  autoshrink: true
 
