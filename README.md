@@ -32,6 +32,7 @@ By default, growls use the standard 'alert' Bootstrap style, are 250px wide, rig
 ```javascript
 $.bootstrapGrowl("another message, yay!", {
   ele: 'body', // which element to append to
+  icon: 'glyphicon glyphicon-info-sign' // Use Bootstrap of FontAwsome icons
   type: 'info', // (null, 'info', 'error', 'success')
   offset: {from: 'top', amount: 20}, // 'top', or 'bottom'
   align: 'right', // ('left', 'right', or 'center')
