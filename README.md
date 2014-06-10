@@ -8,14 +8,14 @@ I have a basic demo set up at jsfiddle for the time being which you can view her
 
 ##Features
 
-* Uses standard [Twitter Bootstrap alerts](http://twitter.github.com/bootstrap/components.html#alerts) which provides 'info', 'error', and 'success' styles.
+* Uses standard [Twitter Bootstrap alerts](http://twitter.github.com/bootstrap/components.html#alerts) which provides 'info', 'danger', and 'success' styles.
 * Multiple growls called consecutively are stacked up one after another in a list.
 * Automatically fades growls away after a default of 4 seconds.
 
 ##Dependencies
 
-1. Latest version of jQuery. (tested on 1.8.3)
-2. [Twitter Bootstrap](http://twitter.github.com/bootstrap/index.html). (current rev tested with 2.2.2)
+1. Latest version of jQuery. (tested on 2.1.1)
+2. [Twitter Bootstrap](http://twitter.github.com/bootstrap/index.html). (current rev tested with 3.1.1)
 
 ##Usage
 
@@ -32,7 +32,7 @@ By default, growls use the standard 'alert' Bootstrap style, are 250px wide, rig
 ```javascript
 $.bootstrapGrowl("another message, yay!", {
   ele: 'body', // which element to append to
-  type: 'info', // (null, 'info', 'error', 'success')
+  type: 'info', // (null, 'info', 'danger', 'success')
   offset: {from: 'top', amount: 20}, // 'top', or 'bottom'
   align: 'right', // ('left', 'right', or 'center')
   width: 250, // (integer, or 'auto')
