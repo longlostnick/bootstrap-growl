@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-growl",
-  "description": "Pretty simple jQuery plugin that turns standard Bootstrap alerts into hovering "Growl-like" notifications.",
+  "description": "Pretty simple jQuery plugin that turns standard Bootstrap alerts into hovering 'Growl-like' notifications.",
   "version": "0.0.1",
   "license": "MIT",
   "homepage": "http://ifightcrime.github.io/bootstrap-growl",
