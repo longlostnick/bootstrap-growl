@@ -38,7 +38,8 @@ $.bootstrapGrowl("another message, yay!", {
   width: 250, // (integer, or 'auto')
   delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
   allow_dismiss: true, // If true then will display a cross to close the popup.
-  stackup_spacing: 10 // spacing between consecutively stacked growls.
+  stackup_spacing: 10, // spacing between consecutively stacked growls.
+  title: "" // Optional header/title to give the notification (enclosed in <h4> tags).  The message is appended after
 });
 ```
 

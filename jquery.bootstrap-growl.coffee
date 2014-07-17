@@ -9,6 +9,9 @@ $.bootstrapGrowl = (message, options) ->
   $alert.attr "class", "bootstrap-growl alert"
   $alert.addClass "alert-" + options.type if options.type
   $alert.append "<a class=\"close\" data-dismiss=\"alert\" href=\"#\">&times;</a>" if options.allow_dismiss
+  
+  message = "<h4>"+options.title+"</h4>"+message if options.title != ""
+  
   $alert.append message
 
   # Prevent BC breaks
@@ -67,4 +70,5 @@ $.bootstrapGrowl.default_options =
   delay: 4000
   allow_dismiss: true
   stackup_spacing: 10
+  title: ""
 
