@@ -18,6 +18,10 @@
                 setTimeout(function() {
                     $.bootstrapGrowl("This is another test.", { type: 'success' });
                 }, 1000);
+
+                setTimeout(function() {
+                    $.bootstrapGrowl("Test with title!", { type: 'success', title: 'Special Titlized Growl' });
+                }, 1000);
                 
                 setTimeout(function() {
                     $.bootstrapGrowl("Danger, Danger!", {
