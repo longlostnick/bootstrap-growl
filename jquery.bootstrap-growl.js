@@ -5,7 +5,6 @@
 
   $.bootstrapGrowl = function(message, options) {
     var $alert, css, offsetAmount;
-
     options = $.extend({}, $.bootstrapGrowl.default_options, options);
     $alert = $("<div>");
     $alert.attr("class", "bootstrap-growl alert");
@@ -13,7 +12,8 @@
       $alert.addClass("alert-" + options.type);
     }
     if (options.allow_dismiss) {
-      $alert.append("<span class=\"close\" data-dismiss=\"alert\">&times;</span>");
+      $alert.addClass("alert-dismissible");
+      $alert.append("<button  class=\"close\" data-dismiss=\"alert\" type=\"button\"><span aria-hidden=\"true\">&times;</span><span class=\"sr-only\">Close</span></button>");
     }
     $alert.append(message);
     if (options.top_offset) {
