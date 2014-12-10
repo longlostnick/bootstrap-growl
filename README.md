@@ -14,8 +14,8 @@ I have a basic demo set up at jsfiddle for the time being which you can view her
 
 ##Dependencies
 
-1. Latest version of jQuery. (tested on 2.1.1)
-2. [Twitter Bootstrap](http://twitter.github.com/bootstrap/index.html). (current rev tested with 3.1.1)
+1. Latest version of jQuery. (tested on 1.11.0)
+2. [Twitter Bootstrap](http://twitter.github.com/bootstrap/index.html). (current rev tested with 3.3.1)
 
 ##Usage
 
