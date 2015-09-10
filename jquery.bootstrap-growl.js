@@ -58,7 +58,7 @@
         
         $('.bootstrap-growl').each(function( index ) {
             newPos = (parseInt($(this).css(options.offset.from)) - (parseInt($(this).css('height')) + options.stackup_spacing)) + 'px';
-            $(this).css('top', newPos);
+            $(this).css(options.offset.from, newPos);
         });
       });
     }
