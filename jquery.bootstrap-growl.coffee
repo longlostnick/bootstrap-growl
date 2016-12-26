@@ -10,7 +10,7 @@ $.bootstrapGrowl = (message, options) ->
   $alert.addClass "alert-" + options.type if options.type
   if options.allow_dismiss
     $alert.addClass "alert-dismissible"
-    $alert.append "<button class=\"close\" data-dismiss=\"alert\" type=\"button\"><span aria-hidden=\"true\">&times;</span><span class=\"sr-only\">Close</span></button>" 
+    $alert.append "<button class=\"close\" data-dismiss=\"alert\" type=\"button\"><span aria-hidden=\"true\">&#215;</span><span class=\"sr-only\">Close</span></button>"
   
   $alert.append message
 
