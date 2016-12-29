@@ -15,6 +15,11 @@
       $alert.addClass("alert-dismissible");
       $alert.append("<button  class=\"close\" data-dismiss=\"alert\" type=\"button\"><span aria-hidden=\"true\">&#215;</span><span class=\"sr-only\">Close</span></button>");
     }
+
+    if (options.title) {
+      $alert.append("<h4>" + options.title + "</h4>") ;
+    }
+
     $alert.append(message);
     if (options.top_offset) {
       options.offset = {
