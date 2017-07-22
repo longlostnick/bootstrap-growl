@@ -45,7 +45,7 @@
 <a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
 
 <ul>
-<li>Uses standard <a href="http://twitter.github.com/bootstrap/components.html#alerts">Twitter Bootstrap alerts</a> which provides 'info', 'error', and 'success' styles.</li>
+<li>Uses standard <a href="http://twitter.github.com/bootstrap/components.html#alerts">Twitter Bootstrap alerts</a> which provides 'info', 'danger', and 'success' styles.</li>
 <li>Multiple growls called consecutively are stacked up one after another in a list.</li>
 <li>Automatically fades growls away after a default of 4 seconds.</li>
 </ul>
@@ -73,7 +73,7 @@
 
 <div class="highlight highlight-javascript"><pre>$.bootstrapGrowl(<span class="pl-s1"><span class="pl-pds">"</span>another message, yay!<span class="pl-pds">"</span></span>, {
   ele<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>body<span class="pl-pds">'</span></span>, <span class="pl-c">// which element to append to</span>
-  type<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>info<span class="pl-pds">'</span></span>, <span class="pl-c">// (null, 'info', 'error', 'success')</span>
+  type<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>info<span class="pl-pds">'</span></span>, <span class="pl-c">// (null, 'info', 'danger', 'success')</span>
   offset<span class="pl-k">:</span> {from<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>top<span class="pl-pds">'</span></span>, amount<span class="pl-k">:</span> <span class="pl-c1">20</span>}, <span class="pl-c">// 'top', or 'bottom'</span>
   align<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>right<span class="pl-pds">'</span></span>, <span class="pl-c">// ('left', 'right', or 'center')</span>
   width<span class="pl-k">:</span> <span class="pl-c1">250</span>, <span class="pl-c">// (integer, or 'auto')</span>
