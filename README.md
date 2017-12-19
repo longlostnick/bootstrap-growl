@@ -1,23 +1,23 @@
-#bootstrap-growl
+# bootstrap-growl
 
 Pretty simple jQuery plugin that turns standard Bootstrap alerts into hovering "Growl-like" notifications.
 
-##Demo
+## Demo
 
 I have a basic demo set up at jsfiddle for the time being which you can view here: http://jsfiddle.net/ifightcrime/Us6WX/1008/
 
-##Features
+## Features
 
 * Uses standard [Twitter Bootstrap alerts](http://twitter.github.com/bootstrap/components.html#alerts) which provides 'info', 'danger', and 'success' styles.
 * Multiple growls called consecutively are stacked up one after another in a list.
 * Automatically fades growls away after a default of 4 seconds.
 
-##Dependencies
+## Dependencies
 
 1. Latest version of jQuery. (tested on 1.11.0)
 2. [Twitter Bootstrap](http://twitter.github.com/bootstrap/index.html). (current rev tested with 3.3.1)
 
-##Usage
+## Usage
 
 Include the dependencies and `jquery.bootstrap-growl.min.js` into your page and call the following:
 
@@ -25,7 +25,7 @@ Include the dependencies and `jquery.bootstrap-growl.min.js` into your page and 
 $.bootstrapGrowl("My message");
 ```
 
-##Available Options
+## Available Options
 
 By default, growls use the standard 'alert' Bootstrap style, are 250px wide, right aligned, and are positioned 20px from the top right of the page.
 
@@ -44,7 +44,7 @@ $.bootstrapGrowl("another message, yay!", {
 
 Note: Previous ```top_offset``` is not broken by this latest change.
 
-##Additional Contributors
+## Additional Contributors
 
 * Jose Martinez https://github.com/callado4
 * Lloyd Watkin https://github.com/lloydwatkin
